@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Modificar producto
+{% endblock %}
+
+{% block contenido %}
+
+<div class="contenedor formulario-contenedor">
+
+    <h2>Modificar producto</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ formulario.as_p }}
+
+        <div class="acciones">
+            <button type="submit" class="boton">
+                Actualizar producto
+            </button>
+
+            <a href="{% url 'lista_productos' %}" class="boton boton-secundario">
+                Cancelar
+            </a>
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}
